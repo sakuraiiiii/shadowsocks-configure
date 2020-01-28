@@ -3,6 +3,7 @@
 * 系统：
 
 	* 如果系统为Centos7+：
+	
 	1.安装epel扩展源：```yum -y install epel-release```
 	
 	2.安装```pip```：```yum -y install python-pip```
