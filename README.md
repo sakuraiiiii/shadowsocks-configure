@@ -4,7 +4,7 @@
 
 	* 如果系统为Centos7+：
 	
-	1.安装epel扩展源：```yum -y install epel-release```
+	1.安装```epel```扩展源：```yum -y install epel-release```
 	
 	2.安装```pip```：```yum -y install python-pip```
 	
@@ -110,7 +110,10 @@
 	
 	```
 	sudo ufw allow 80  # 允许外部访问80端口
+	
 	sudo ufw delete allow 80  # 禁止外部访问80端口
+	
  	sudo ufw allow from 192.168.1.1  # 允许此IP访问所有的本机端口
+	
  	sudo ufw deny proto tcp from 10.0.0.0/8 to 192.168.0.1 port 22  # 要拒绝所有的TCP流量从10.0.0.0/8 到192.168.0.1地址的22端口
 	```
