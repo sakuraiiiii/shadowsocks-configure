@@ -4,44 +4,9 @@
 
 	* 如果系统为Centos7+：
 	
-	1.安装```epel```扩展源：```yum -y install epel-release```
+	1.[参考](http://www.tometu.com/item/view/20180222171312.html)
 	
-	2.安装```pip```：```yum -y install python-pip```
-	
-	3.清除```cache```：```yum clean all```
-	
-	4.```pip```安装```python```版本的```shadowsocks```：```pip install shadowsocks```
-	
-	5.配置文件：```sudo vim /etc/shadowsocks.json```
-	
-	```json
-	{
-  		"server": "0.0.0.0",
- 		"server_port": 8623,
-  		"local_address": "127.0.0.1",
-  		"local_port": 1080,
-  		"password": "your password",
-  		"timeout": 300,
-  		"method": "aes-256-cfb",
-  		"fast_open": false
-	}
-	```
-	
-	6.开机自启动：```vim /etc/systemd/system/shadowsocks.service```:
-	
-	```
-	[Unit]
-	Description=Shadowsocks
-
-	[Service]
-	TimeoutStartSec=0
-	ExecStart=/usr/bin/ssserver -c /etc/shadowsocks.json
-
-	[Install]
-	WantedBy=multi-user.target
-	```
-	
-	7.启动```shadowsocks```服务：
+	2.启动```shadowsocks```服务：
 	
 	```
 	systemctl enable shadowsocks
@@ -49,7 +14,7 @@
 	systemctl status shadowsocks -l  # 查看状态
 	```
 	
-	8.防火墙设置：
+	3.防火墙设置：
 	
 	```
 	firewall-cmd --query-port=80/tcp  # 查询端口
@@ -100,9 +65,6 @@
 	
 	```
 	sudo ufw status  # 查看防火墙状态
-	```
-	
-	```
 	sudo ufw disable  # 关闭防火墙
 	```
 	
